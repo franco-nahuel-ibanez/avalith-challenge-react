@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { data } from '../../data';
 import { Formulario } from '../formulario/Formulario';
 import { Producto } from '../producto/Producto';
 
 export const Catalogo = () => {
 
-    const [filterStock, setFilterStock] = useState(false)
-
     const [products, setProducts] = useState([])
 
-    const handleToggleButton = () =>{
-        setFilterStock( !filterStock )
-    }
 
     const getProducts = async () => {
         const req = await fetch('https://fakestoreapi.com/products');
